@@ -1,0 +1,335 @@
+.game{
+    height: 100svh;
+    width: 100svw;
+    background-color: rgb(4, 5, 46);
+    display: flex;
+    justify-content: center;
+    background-image: url(../imgs/SpaceBackground.png) ;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: fixed;
+}   
+
+.clickable-bodygame{
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 70svh;
+    width: 100vw;
+    cursor: url(../cursors/teste.cur), auto;
+}
+
+.controlPanel{
+    align-self: flex-end;
+    display: flex;
+    justify-content: center;
+    height: 30svh;
+    width: 100vw;
+    border-radius: 500px 500px 0px 0px;
+    background-color: #000000d2;
+    border-top: 5px solid white;
+    
+}
+
+.alien-gun{
+    position: absolute;
+    top: 62%;
+    width: 8vw;
+    height: 15vh;
+    display: flex;
+    justify-content: center;
+    pointer-events:none;
+}
+
+.alien-gun .ship-gun{
+    width: 8vw;
+    height: 15vh;
+    transform-origin: 50% 100%;;
+    transition: transform 1s linear;
+    animation: levitate 3.5s infinite linear;
+    pointer-events:none;
+    z-index: 2;
+}
+
+.alien-gun .ship-propulsion{
+    width: 5vw;
+    height: 11vh;
+    position: absolute;
+    top: 40%;
+    animation: levitate 3.5s infinite linear;
+    filter: drop-shadow(0 0 1rem rgb(32, 66, 255));
+}
+
+.bullet {
+    width: 5px;
+    height: 15px;
+    background-color: yellow;
+    position: absolute;
+    z-index: 11;
+}
+
+.counter{
+    display: flex;
+    height: 40vh;
+    width: 40vw;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    z-index: 10;
+    pointer-events:none;
+}
+
+.count{
+    font-size: 30vh;
+    color: #ffffff;
+    animation: countdown 1s infinite;
+    pointer-events:none;
+}
+
+.clickable-bodygame .earth{
+    border-radius: 50%;
+    pointer-events:none;
+    -webkit-user-select: none;
+    filter:drop-shadow(0 0mm 6mm #00bad2);
+    z-index: 10;
+    animation: fade-in 2s linear;
+}
+
+.clickable-bodygame .earth img{
+    height: 12vh;
+    animation: rotate 60s linear infinite;
+}
+
+.target-hitbox{
+    position: absolute;
+    width: 20vh;
+    height: 20vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    animation: move-left 2.5s linear ;
+}
+
+.target0{
+    position: absolute;
+    width: 200px;
+    height: 200px ;
+    top: 70%;
+    left: 60%;
+    border-radius: 50%;
+    background-image: url(../imgs/asteroid.png);
+    object-fit: contain;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    cursor: url(../cursors/sniperScopePrecision.cur), auto;
+    animation: asteroidRoll 1.5s linear infinite;
+    animation-delay: 0s;
+
+}
+
+.target1{
+    position: absolute;
+    width: 15vh;
+    height: 15vh;
+    border-radius: 50%;
+    background-image: url(../imgs/asteroid.png);
+    object-fit: contain;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    cursor: url(../cursors/sniperScopePrecision.cur), auto;
+    animation: asteroidRoll  2.5s infinite linear ;
+    filter: drop-shadow(0mm 0mm 10mm rgb(214, 22, 64));
+    animation-delay: 0s;
+}
+
+.target2{
+    position: absolute;
+    width: 100px;
+    height: 100px ;
+    top: 20%;
+    left: 40%;
+    border-radius: 50%;
+    background-image: url(../imgs/asteroid.png);
+    object-fit: contain;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    cursor: url(../cursors/sniperScopePrecision.cur), auto;
+    animation: asteroidRoll 2s linear infinite;
+    animation-delay: 0s;
+}
+
+.target3{
+    position: absolute;
+    width: 100px;
+    height: 100px ;
+    top: 20%;
+    right: 30%;
+    border-radius: 50%;
+    background-image: url(../imgs/asteroid.png);
+    object-fit: contain;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    cursor: url(../cursors/sniperScopePrecision.cur), auto;
+    animation: asteroidRoll 1.5s linear infinite;
+    animation-delay: 0s;
+}
+
+.target4{
+    position: absolute;
+    width: 100px;
+    height: 100px ;
+    top: 50%;
+    left: 70%;
+    border-radius: 50%;
+    background-image: url(../imgs/asteroid.png);
+    object-fit: contain;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    cursor: url(../cursors/sniperScopePrecision.cur), auto;
+    animation: asteroidRoll 1.5s linear infinite;
+    animation-delay: 0s;
+}
+
+.target5{
+    position: absolute;
+    width: 100px;
+    height: 100px ;
+    top: 60%;
+    left: 30%;
+    border-radius: 50%;
+    background-image: url(../imgs/asteroid.png);
+    object-fit: contain;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    cursor: url(../cursors/sniperScopePrecision.cur), auto;
+    animation: asteroidRoll 1.5s linear infinite;
+    animation-delay: 0s;
+}
+
+@keyframes countdown{
+    0%      { transform: scale(2);}
+    65%     { opacity: 0;}
+    100%    { opacity: 0;}
+}
+
+@keyframes rotate {
+    0% {
+        transform: rotate(0deg) scale(1);
+    }
+    5% {
+        transform: rotate(18deg) scale(1.05);
+    }
+    10% {
+        transform: rotate(36deg) scale(1);
+    }
+    15% {
+        transform: rotate(54deg) scale(1.05);
+    }
+    20% {
+        transform: rotate(72deg) scale(1);
+    }
+    25% {
+        transform: rotate(90deg) scale(1.05);
+    }
+    30% {
+        transform: rotate(108deg) scale(1);
+    }
+    35% {
+        transform: rotate(126deg) scale(1.05);
+    }
+    40% {
+        transform: rotate(144deg) scale(1);
+    }
+    45% {
+        transform: rotate(162deg) scale(1.05);
+    }
+    50% {
+        transform: rotate(180deg) scale(1);
+    }
+    55% {
+        transform: rotate(198deg) scale(1.05);
+    }
+    60% {
+        transform: rotate(216deg) scale(1);
+    }
+    65% {
+        transform: rotate(234deg) scale(1.05);
+    }
+    70% {
+        transform: rotate(252deg) scale(1);
+    }
+    75% {
+        transform: rotate(270deg) scale(1.05);
+    }
+    80% {
+        transform: rotate(288deg) scale(1);
+    }
+    85% {
+        transform: rotate(306deg) scale(1.05);
+    }
+    90% {
+        transform: rotate(324deg) scale(1);
+    }
+    95% {
+        transform: rotate(342deg) scale(1.05);
+    }
+    100% {
+        transform: rotate(360deg) scale(1);
+    }
+}
+
+@keyframes fade-in{
+    0%      {opacity: 0;}
+
+    100%    {opacity: 1;}
+}
+
+
+@keyframes asteroidRoll {
+    0%      {transform: rotate(-360deg);}
+
+    90%     {width: 10vh;
+            height: 10vh;}
+
+    100%    {width: 0px;
+            height: 0px;
+            transform: rotate(360deg);}
+}
+
+@keyframes move-left{
+    0%      {top: -50%;
+            left: -70%;}
+    
+
+    100%    {top: 40%;
+            left: 45%;}
+}
+
+@keyframes move-left-and-roll {
+    0%      {top: -50%;
+            left: -70%;
+            width: 100px;
+            height: 100px;
+            transform: rotate(-360deg);
+    }
+
+    90%     {width: 100px;
+            height: 100px;
+            transform: rotate(0deg);
+    }
+
+    100%    {top: 43%;
+            left: 47%;
+            width: 80px;
+            height: 80px;
+            transform: rotate(360deg);
+    }
+}

@@ -1,0 +1,142 @@
+nav {
+  position:absolute;
+  width: 5svw;
+  height: 100vh;
+  display: grid;
+  grid-template-rows: repeat(6, 1fr);
+  padding: 0 15px;
+  background: black;
+  border-right:  2px solid #359679;
+  box-shadow: 0 6.7px 5.3px rgba(0, 0, 0, 0.12), 0 22.3px 17.9px rgba(0, 0, 0, 0.08), 0 100px 80px rgba(0, 0, 0, 0.04);
+  overflow: hidden;
+  transform: translateX(-75%);
+  transition: 0.5s;
+  z-index: 100;
+}
+
+nav:hover{
+  transform: none;
+}
+
+nav.hidden-bar{
+  transform: translateX(-99%);
+}
+
+nav.hidden-bar:hover{
+  transform: none;
+}
+
+nav .arrow-right{
+  position: absolute;
+  top: 40%;
+  left: 84%;
+  width: 10px;
+  height: 10px;
+}
+
+.arrow-right svg{
+  width: 10px;
+}
+
+nav ul {
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+nav ul li {
+  list-style: none;
+  width: var(--icon-size);
+  height: var(--icon-size);
+}
+
+nav ul li a, .github {
+  display: block;
+  width: 100%;
+  height: 100%;
+  cursor: pointer;
+
+}
+
+nav ul li a svg, .github{
+  fill: #fff;
+  width: 100%;
+  height: 100%;
+  opacity: 0.4;
+  transition: opacity 100ms ease !important;
+  pointer-events: none;
+}
+
+nav ul li a.active svg, a.active .github {
+  opacity: 1;
+  animation: abduction 5s linear  infinite alternate;
+}
+
+nav .nav-alien{
+  position: absolute;
+  transition: top 400ms ease;
+  z-index: 10;
+  height: 100px;
+  width: 80;
+  animation: levitate 5s linear infinite;
+}
+
+
+nav .nav-alien .tubelight{
+  position: absolute;
+  left: 0px;
+  top: 2vh;
+  transform: translateX(-25%);
+  width: 45px;
+  height: 5px;
+}
+
+nav .nav-alien .ovni_nav{
+  height: 50px;
+  position: absolute ; 
+  top: -10% ;
+  transform: translateX(-27%);
+  z-index: 10;
+
+}
+
+nav .nav-alien .tubelight .light-ray {
+  position: absolute;
+  left: -30%;
+  top: 5px;
+  width: 160%;
+  height: 80px;
+  clip-path: polygon(5% 100%, 25% 0px, 75% 0px, 95% 100%);
+  background: linear-gradient(to bottom, rgba(255, 255, 255, 0.3) -50%, rgba(255, 255, 255, 0) 90%);
+  pointer-events: none;
+}
+
+@keyframes levitate{
+  0%   { transform: translateY(5%);}
+  50%  { transform: translateY(-5%);}
+  100% { transform: translateY(5%);}
+
+}
+
+@keyframes abduction{
+  0%  { transform: translateY(30%);}
+  20% { transform: translateY(0%);}
+
+  45% { transform: translateX(3%);}
+  55% { transform: translateX(-3%);}
+  65% { transform: translateX(3%);}
+  70% { transform: translateX(-3%);}
+
+  
+
+  80% {transform: translateY(0%);
+        transform: translateX(6%)}
+
+  100% {transform: translateY(0%);
+        transform: translateX(0%)}
+
+    
+
+
+}
