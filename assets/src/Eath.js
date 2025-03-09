@@ -8,8 +8,8 @@ export const createEath = () =>{
         earthHitbox.className = 'earth';
         bodygame.appendChild(earthHitbox);
 
-        const earth = document.createElement('img');
-        earth.src = ('../assets/imgs/earth.png');
+        const earth = document.createElement('div');
+        earth.className = ('globe');
         earthHitbox.appendChild(earth);
     }, 3000);
 }

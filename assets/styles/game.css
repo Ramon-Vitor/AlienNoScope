@@ -97,9 +97,15 @@
     animation: fade-in 2s linear;
 }
 
-.clickable-bodygame .earth img{
+.clickable-bodygame .earth .globe{ 
     height: 12vh;
+    width: 12vh;
     animation: rotate 60s linear infinite;
+    background-image: url(../imgs/earth.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: fixed;
 }
 
 .target-hitbox{
